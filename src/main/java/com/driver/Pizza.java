@@ -88,11 +88,11 @@ public class Pizza {
 
     public String getBill(){
         // your code goes here
-        if(Boolean.TRUE.equals(this.billGenerated)) return "";
+        if(Boolean.TRUE.equals(this.billGenerated)) return this.bill;
         this.billGenerated = true;
         if(Boolean.TRUE.equals(this.bagAdded)){
             this.price += this.bagPrice;
-            this.bill += "Paper bag Added: " + this.bagPrice + "\n";
+            this.bill += "Paperbag Added: " + this.bagPrice + "\n";
         }
         this.bill += "Total Price: " + this.price;
         return this.bill;
