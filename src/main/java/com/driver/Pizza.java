@@ -13,6 +13,7 @@ public class Pizza {
     private int nonVegToppingPrice;
     private int bagPrice;
     private Boolean bagAdded;
+    private Boolean billGenerated;
 
     public Pizza(Boolean isVeg){
         this.isVeg = isVeg;
@@ -23,6 +24,7 @@ public class Pizza {
         this.nonVegToppingPrice=120;
         this.bagPrice = 20;
         this.bagAdded = false;
+        this.billGenerated = false;
         // your code goes here
 
         if(this.isVeg){
@@ -86,6 +88,8 @@ public class Pizza {
 
     public String getBill(){
         // your code goes here
+        if(Boolean.TRUE.equals(this.billGenerated)) return "";
+        this.billGenerated = true;
         if(Boolean.TRUE.equals(this.bagAdded)){
             this.price += this.bagPrice;
             this.bill += "Paper bag Added: " + this.bagPrice + "\n";
