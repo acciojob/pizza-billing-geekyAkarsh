@@ -82,6 +82,7 @@ public class Pizza {
     public void addTakeaway(){
         // your code goes here
         this.bagAdded = true;
+        this.price += this.bagPrice;
 
         return;
     }
@@ -91,7 +92,7 @@ public class Pizza {
         if(Boolean.TRUE.equals(this.billGenerated)) return this.bill;
         this.billGenerated = true;
         if(Boolean.TRUE.equals(this.bagAdded)){
-            this.price += this.bagPrice;
+            //this.price += this.bagPrice;
             this.bill += "Paperbag Added: " + this.bagPrice + "\n";
         }
         this.bill += "Total Price: " + this.price + "\n";
